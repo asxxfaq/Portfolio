@@ -1,0 +1,152 @@
+/* src/components/Sidebar.css */
+
+/* --- Variables (Ensure these match your global definitions in App.css) --- */
+:root {
+  --primary-color: #f7a048; /* Prominent Orange/Yellow highlight color */
+  --secondary-color: #343a40; /* Dark text color */
+  --light-text-color: #6c757d; /* Lighter text for links */
+  --sidebar-bg: #ffffff;
+  --border-color: #e9ecef;
+}
+
+
+/* --- Sidebar Container (Fixed Layout) --- */
+.sidebar-container {
+  width: 280px; /* Fixed width */
+  min-height: 100vh;
+  background-color: var(--sidebar-bg);
+  padding: 40px 20px;
+  position: sticky; /* Sticky is often preferred over fixed if App.js manages the flex container */
+  top: 0;
+  left: 0;
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 100; /* Ensure it stays above other content */
+}
+
+/* --- Profile Area --- */
+.profile-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.profile-img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  /* Thick border matching the accent color */
+  border: 5px solid var(--primary-color); 
+  margin-bottom: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-name {
+  font-size: 1.4em;
+  font-weight: 700;
+  color: var(--secondary-color);
+  letter-spacing: 0.5px;
+}
+
+/* --- Navigation Menu --- */
+.main-nav {
+  width: 100%;
+}
+
+.main-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.main-nav li {
+    /* Optional: If you want slight spacing between links */
+    margin: 5px 0; 
+}
+
+.nav-item {
+  display: block;
+  padding: 12px 15px;
+  text-decoration: none;
+  color: var(--light-text-color);
+  font-weight: 600;
+  transition: color 0.3s, background-color 0.3s;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  letter-spacing: 1px;
+}
+
+/* Hover State */
+.nav-item:hover {
+  color: var(--primary-color);
+}
+
+/* Active State (from NavLink) */
+.nav-item.active {
+  color: var(--primary-color);
+  /* Optional: Add a subtle background or border highlight */
+  /* background-color: rgba(247, 160, 72, 0.05); */
+}
+
+/* --- Alerts Section (Icons) --- */
+.alerts-section {
+  margin-top: auto; /* Pushes the icons to the bottom */
+  padding-top: 30px;
+  display: flex;
+  gap: 15px;
+}
+
+.lightbulb, .alert-icon {
+    font-size: 1.2em;
+    padding: 10px;
+    border-radius: 50%;
+    color: var(--primary-color);
+    background-color: #fff3cd; /* Light yellow background */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.lightbulb:hover, .alert-icon:hover {
+    transform: scale(1.1);
+}
+
+/* --- Responsive adjustment for smaller screens --- */
+@media (max-width: 768px) {
+    .sidebar-container {
+        width: 100%;
+        min-height: auto;
+        position: relative;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        padding: 20px 0;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    .profile-header {
+        margin-bottom: 10px;
+        order: 1; /* Place profile first */
+        display: none; /* Hide for a cleaner mobile header */
+    }
+    .main-nav {
+        order: 2; /* Place nav next */
+        width: auto;
+    }
+    .main-nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .main-nav li {
+        margin: 0 5px;
+    }
+    .nav-item {
+        padding: 8px 10px;
+        font-size: 0.8em;
+    }
+    .alerts-section {
+        display: none; /* Hide icons on tiny screens to save space */
+    }
+}
