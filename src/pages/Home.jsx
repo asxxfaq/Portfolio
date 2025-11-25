@@ -1,5 +1,5 @@
 import React from "react";
-import "./Pages.css";
+import "./pages.css";;
 import profilePic from './components/profileImg1.jpg';
 import portfolio from './components/portfolio.jpg';
 import elaria from './components/elaria.png';

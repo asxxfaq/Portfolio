@@ -1,29 +1,30 @@
-/* src/components/Sidebar.css */
+/* -------------------------------------------
+   Sidebar CSS (Fully Responsive + Polished)
+-------------------------------------------- */
 
-/* --- Variables (Ensure these match your global definitions in App.css) --- */
+/* --- Variables --- */
 :root {
-  --primary-color: #f7a048; /* Prominent Orange/Yellow highlight color */
-  --secondary-color: #343a40; /* Dark text color */
-  --light-text-color: #6c757d; /* Lighter text for links */
+  --primary-color: #f7a048;
+  --secondary-color: #343a40;
+  --light-text-color: #6c757d;
   --sidebar-bg: #ffffff;
   --border-color: #e9ecef;
 }
 
-
-/* --- Sidebar Container (Fixed Layout) --- */
+/* --- Sidebar Container --- */
 .sidebar-container {
-  width: 280px; /* Fixed width */
+  width: 280px;
   min-height: 100vh;
   background-color: var(--sidebar-bg);
   padding: 40px 20px;
-  position: sticky; /* Sticky is often preferred over fixed if App.js manages the flex container */
+  position: sticky;
   top: 0;
-  left: 0;
   border-right: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 100; /* Ensure it stays above other content */
+  transition: all 0.3s ease;
+  z-index: 100;
 }
 
 /* --- Profile Area --- */
@@ -37,20 +38,18 @@
   height: 130px;
   border-radius: 50%;
   object-fit: cover;
-  /* Thick border matching the accent color */
-  border: 5px solid var(--primary-color); 
+  border: 5px solid var(--primary-color);
   margin-bottom: 15px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
 }
 
 .profile-name {
   font-size: 1.4em;
   font-weight: 700;
   color: var(--secondary-color);
-  letter-spacing: 0.5px;
 }
 
-/* --- Navigation Menu --- */
+/* --- Nav Menu --- */
 .main-nav {
   width: 100%;
 }
@@ -58,11 +57,11 @@
 .main-nav ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .main-nav li {
-    /* Optional: If you want slight spacing between links */
-    margin: 5px 0; 
+  margin: 6px 0;
 }
 
 .nav-item {
@@ -71,82 +70,111 @@
   text-decoration: none;
   color: var(--light-text-color);
   font-weight: 600;
-  transition: color 0.3s, background-color 0.3s;
   text-transform: uppercase;
   font-size: 0.9em;
   letter-spacing: 1px;
+  transition: 0.3s ease;
+  border-radius: 6px;
 }
 
-/* Hover State */
+/* Hover */
 .nav-item:hover {
   color: var(--primary-color);
+  background: rgba(247,160,72,0.08);
 }
 
-/* Active State (from NavLink) */
+/* Active */
 .nav-item.active {
   color: var(--primary-color);
-  /* Optional: Add a subtle background or border highlight */
-  /* background-color: rgba(247, 160, 72, 0.05); */
+  background: rgba(247,160,72,0.12);
+  border-left: 4px solid var(--primary-color);
 }
 
-/* --- Alerts Section (Icons) --- */
+/* --- Bottom Icons --- */
 .alerts-section {
-  margin-top: auto; /* Pushes the icons to the bottom */
-  padding-top: 30px;
+  margin-top: auto;
   display: flex;
   gap: 15px;
+  padding-top: 30px;
 }
 
-.lightbulb, .alert-icon {
-    font-size: 1.2em;
-    padding: 10px;
-    border-radius: 50%;
-    color: var(--primary-color);
-    background-color: #fff3cd; /* Light yellow background */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: transform 0.2s;
+.lightbulb,
+.alert-icon {
+  font-size: 1.2em;
+  padding: 10px;
+  border-radius: 50%;
+  color: var(--primary-color);
+  background: #fff3cd;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: 0.2s ease;
 }
 
-.lightbulb:hover, .alert-icon:hover {
-    transform: scale(1.1);
+.lightbulb:hover,
+.alert-icon:hover {
+  transform: scale(1.1);
 }
 
-/* --- Responsive adjustment for smaller screens --- */
+/* ----------------------------------------------------
+   RESPONSIVE SIDEBAR — MOBILE OPTIMIZED
+---------------------------------------------------- */
+@media (max-width: 992px) {
+  .sidebar-container {
+    width: 240px;
+  }
+
+  .profile-img {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+/* Tablet */
 @media (max-width: 768px) {
-    .sidebar-container {
-        width: 100%;
-        min-height: auto;
-        position: relative;
-        border-right: none;
-        border-bottom: 1px solid var(--border-color);
-        padding: 20px 0;
-        flex-direction: row;
-        justify-content: space-around;
-        flex-wrap: wrap;
-    }
-    .profile-header {
-        margin-bottom: 10px;
-        order: 1; /* Place profile first */
-        display: none; /* Hide for a cleaner mobile header */
-    }
-    .main-nav {
-        order: 2; /* Place nav next */
-        width: auto;
-    }
-    .main-nav ul {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .main-nav li {
-        margin: 0 5px;
-    }
-    .nav-item {
-        padding: 8px 10px;
-        font-size: 0.8em;
-    }
-    .alerts-section {
-        display: none; /* Hide icons on tiny screens to save space */
-    }
+  .sidebar-container {
+    width: 100%;
+    min-height: auto;
+    padding: 15px 10px;
+    flex-direction: row;
+    justify-content: space-between;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+    gap: 20px;
+  }
+
+  /* Hide profile on mobile header */
+  .profile-header {
+    display: none;
+  }
+
+  /* Horizontal nav */
+  .main-nav ul {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-item {
+    padding: 10px 12px;
+    font-size: 0.85em;
+  }
+
+  .alerts-section {
+    display: none;
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+  .sidebar-container {
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .nav-item {
+    padding: 8px 10px;
+    font-size: 0.75em;
+  }
 }

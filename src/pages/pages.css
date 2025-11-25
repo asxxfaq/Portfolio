@@ -816,3 +816,171 @@ section li {
     font-size: 2.2rem;
   }
 }
+/* ====================================================
+   FINAL RESPONSIVE FIXES (GLOBAL)
+==================================================== */
+
+@media (max-width: 992px) {
+  /* HERO SECTION */
+  .hero-wrapper {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .hero-title {
+    font-size: 2.4rem;
+  }
+
+  .hero-image {
+    width: 220px;
+    height: 220px;
+  }
+
+  .typing-text {
+    font-size: 1.2rem;
+    width: 100%;
+  }
+
+  /* RESUME PAGE */
+  .resume-container {
+    flex-direction: column;
+  }
+
+  .resume-left,
+  .resume-right {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  /* GLOBAL */
+  section {
+    padding: 20px;
+  }
+
+  section h1 {
+    font-size: 1.9rem;
+    text-align: center;
+  }
+
+  /* HERO */
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  /* ABOUT PAGE */
+  .about-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-profile {
+    width: 100px;
+    height: 100px;
+  }
+
+  .about-title {
+    font-size: 1.8rem;
+  }
+
+  /* SKILLS GRID */
+  .skills-grid {
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  }
+
+  /* PORTFOLIO */
+  .portfolio-title {
+    font-size: 26px;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    padding: 20px;
+  }
+
+  /* TESTIMONIALS */
+  .test-card {
+    padding: 20px;
+  }
+
+  .test-img {
+    width: 70px;
+    height: 70px;
+  }
+
+  /* CONTACT PAGE */
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.95rem;
+    padding: 12px;
+  }
+
+  .contact-form button {
+    width: 100%;
+  }
+
+  /* RESUME PAGE */
+  .resume-section {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline {
+    border-left: 2px solid var(--primary-color);
+    padding-left: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* GLOBAL */
+  section {
+    padding: 15px;
+  }
+
+  section h1 {
+    font-size: 1.6rem;
+  }
+
+  /* HERO */
+  .hero-title {
+    font-size: 1.7rem;
+  }
+
+  .hero-image {
+    width: 150px;
+    height: 150px;
+  }
+
+  /* MOBILE GRID FIXES */
+  .project-card img {
+    height: 140px;
+  }
+
+  /* ABOUT */
+  .about-title {
+    font-size: 1.5rem;
+  }
+
+  /* CONTACT */
+  .contact-form {
+    width: 100%;
+  }
+
+  /* TIMELINE DOT FIX */
+  .timeline-item .circle {
+    left: -26px;
+  }
+}
+
