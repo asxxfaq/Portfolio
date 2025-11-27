@@ -1,5 +1,5 @@
 /* -------------------------------------------
-   Sidebar CSS (Fully Responsive + Polished)
+   Sidebar CSS (Cleaned, Optimized & Responsive)
 -------------------------------------------- */
 
 /* --- Variables --- */
@@ -11,26 +11,26 @@
   --border-color: #e9ecef;
 }
 
-/* --- Sidebar Container --- */
+/* --- Sidebar Wrapper --- */
 .sidebar-container {
   width: 280px;
   min-height: 100vh;
-  background-color: var(--sidebar-bg);
+  background: var(--sidebar-bg);
   padding: 40px 20px;
+  border-right: 1px solid var(--border-color);
   position: sticky;
   top: 0;
-  border-right: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: all 0.3s ease;
+  transition: 0.3s ease;
   z-index: 100;
 }
 
-/* --- Profile Area --- */
+/* --- Profile Section --- */
 .profile-header {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 35px;
 }
 
 .profile-img {
@@ -39,7 +39,7 @@
   border-radius: 50%;
   object-fit: cover;
   border: 5px solid var(--primary-color);
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   box-shadow: 0 0 12px rgba(0,0,0,0.1);
 }
 
@@ -49,44 +49,44 @@
   color: var(--secondary-color);
 }
 
-/* --- Nav Menu --- */
+/* --- Navigation --- */
 .main-nav {
   width: 100%;
 }
 
 .main-nav ul {
   list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 .main-nav li {
-  margin: 6px 0;
+  margin-bottom: 6px;
 }
 
 .nav-item {
   display: block;
   padding: 12px 15px;
+  border-radius: 6px;
   text-decoration: none;
   color: var(--light-text-color);
   font-weight: 600;
   text-transform: uppercase;
   font-size: 0.9em;
   letter-spacing: 1px;
-  transition: 0.3s ease;
-  border-radius: 6px;
+  transition: 0.25s ease;
 }
 
-/* Hover */
+/* Hover Effect */
 .nav-item:hover {
-  color: var(--primary-color);
   background: rgba(247,160,72,0.08);
+  color: var(--primary-color);
 }
 
-/* Active */
+/* Active Nav */
 .nav-item.active {
-  color: var(--primary-color);
   background: rgba(247,160,72,0.12);
+  color: var(--primary-color);
   border-left: 4px solid var(--primary-color);
 }
 
@@ -95,19 +95,18 @@
   margin-top: auto;
   display: flex;
   gap: 15px;
-  padding-top: 30px;
 }
 
 .lightbulb,
 .alert-icon {
-  font-size: 1.2em;
+  background: #fff3cd;
+  color: var(--primary-color);
   padding: 10px;
   border-radius: 50%;
-  color: var(--primary-color);
-  background: #fff3cd;
+  font-size: 1.2em;
   box-shadow: 0 0 6px rgba(0,0,0,0.1);
   cursor: pointer;
-  transition: 0.2s ease;
+  transition: 0.25s ease;
 }
 
 .lightbulb:hover,
@@ -116,7 +115,7 @@
 }
 
 /* ----------------------------------------------------
-   RESPONSIVE SIDEBAR — MOBILE OPTIMIZED
+   RESPONSIVE SIDEBAR — LAPTOP & TABLET
 ---------------------------------------------------- */
 @media (max-width: 992px) {
   .sidebar-container {
@@ -129,25 +128,24 @@
   }
 }
 
-/* Tablet */
+/* --- Tablet Layout --- */
 @media (max-width: 768px) {
   .sidebar-container {
     width: 100%;
     min-height: auto;
-    padding: 15px 10px;
+    padding: 15px 12px;
     flex-direction: row;
     justify-content: space-between;
     border-right: none;
     border-bottom: 1px solid var(--border-color);
-    gap: 20px;
+    gap: 15px;
   }
 
-  /* Hide profile on mobile header */
+  /* Hide profile on tablet header */
   .profile-header {
     display: none;
   }
 
-  /* Horizontal nav */
   .main-nav ul {
     display: flex;
     gap: 10px;
@@ -165,16 +163,98 @@
   }
 }
 
-/* Mobile Phones */
+/* ----------------------------------------------------
+   MOBILE PHONES — FULLY RESPONSIVE
+---------------------------------------------------- */
 @media (max-width: 480px) {
   .sidebar-container {
     flex-wrap: wrap;
-    text-align: center;
     justify-content: center;
+    text-align: center;
+    gap: 10px;
   }
 
   .nav-item {
     padding: 8px 10px;
-    font-size: 0.75em;
+    font-size: 0.8em;
   }
 }
+
+/* --- Extra Small Devices (320px and below) --- */
+@media (max-width: 360px) {
+  .nav-item {
+    font-size: 0.75em;
+    padding: 7px 8px;
+  }
+
+  .sidebar-container {
+    padding: 10px 5px;
+  }
+}
+/* -------------------------------------------
+   MOBILE TOGGLE BUTTON
+-------------------------------------------- */
+
+.sidebar-toggle-btn {
+  display: none;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 999;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 12px;
+  font-size: 22px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* -------------------------------------------
+   MOBILE SIDEBAR (Slide-in)
+-------------------------------------------- */
+@media (max-width: 768px) {
+  .sidebar-toggle-btn {
+    display: block;
+  }
+
+  .sidebar-container {
+    position: fixed;
+    left: -260px;
+    top: 0;
+    height: 100vh;
+    width: 250px;
+    transition: 0.3s ease-in-out;
+    z-index: 1000;
+    background: var(--sidebar-bg);
+  
+    /* Move elements UP */
+    padding-top: 5px; /* adjust this number as you like */
+  }
+  
+  .sidebar-container.open {
+    left: 0;
+  }
+
+  .profile-header {
+    display: block !important;
+  }
+
+  .main-nav ul {
+    display: block !important;
+  }
+}
+
+/* -------------------------------------------
+   DARK OVERLAY BACKGROUND
+-------------------------------------------- */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.45);
+  z-index: 998;
+}
+
