@@ -12,8 +12,8 @@ function Testimonials() {
         {/* Testimonial 1 */}
         <div className="test-card">
           <img src="/t1.jpg" alt="Client" className="test-img" />
-          <h3>Rahul Menon</h3>
-          <p className="test-role">Software Engineer - Bangalore</p>
+          <h3>Hiba P</h3>
+          <p className="test-role">HR Manager Techolas Technologies</p>
           <p className="test-text">
             “Ashfaq is a highly skilled MERN developer. His UI design sense and
             problem-solving skills are outstanding. Always delivers on time.”
@@ -24,7 +24,7 @@ function Testimonials() {
         {/* Testimonial 2 */}
         <div className="test-card">
           <img src="/t2.jpg" alt="Client" className="test-img" />
-          <h3>Aisha Rahman</h3>
+          <h3>Nihala </h3>
           <p className="test-role">Project Manager - Calicut</p>
           <p className="test-text">
             “Very professional, quick to understand requirements, and implements
@@ -36,11 +36,10 @@ function Testimonials() {
         {/* Testimonial 3 */}
         <div className="test-card">
           <img src="/t3.jpg" alt="Client" className="test-img" />
-          <h3>Vishnu Prakash</h3>
-          <p className="test-role">UI/UX Designer - Mysore</p>
+          <h3>Jayashree Mayya</h3>
+          <p className="test-role">Faculty - Manglore</p>
           <p className="test-text">
-            “Enjoyed working with him. The way he converts UI ideas into React
-            components is impressive.”
+            “Demonstrated strong proficiency in translating UI concepts into well-structured and reusable React components.”
           </p>
           <div className="stars">★★★★★</div>
         </div>

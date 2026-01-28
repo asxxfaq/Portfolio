@@ -1,5 +1,3 @@
-// src/components/Sidebar.js
-
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import profilePic from './profileImg.jpg';
@@ -19,21 +17,21 @@ const Sidebar = () => {
 
   return (
     <>
-      {/* Mobile Toggle Button */}
+      {}
       <button className="sidebar-toggle-btn" onClick={() => setIsOpen(!isOpen)}>
         ☰
       </button>
 
-      {/* Sidebar */}
+      {}
       <div className={`sidebar-container ${isOpen ? "open" : ""}`}>
-        
-        {/* Profile Section */}
+
+        {}
         <div className="profile-header">
           <img src={profilePic} alt="Abdul Ashfaqe" className="profile-img" />
           <h3 className="profile-name">Abdul Ashfaqe</h3>
         </div>
 
-        {/* Navigation */}
+        {}
         <nav className="main-nav">
           <ul>
             {navItems.map((item) => (
@@ -53,10 +51,11 @@ const Sidebar = () => {
         </nav>
       </div>
 
-      {/* Background Overlay for Mobile */}
+      {}
       {isOpen && <div className="overlay" onClick={() => setIsOpen(false)}></div>}
     </>
   );
 };
 
 export default Sidebar;
+

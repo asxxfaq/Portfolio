@@ -4,7 +4,15 @@ import { jsPDF } from "jspdf";
 import html2canvas from "html2canvas";
 
 // Icons
-import { FaUser, FaBriefcase, FaTools, FaGraduationCap, FaCertificate, FaLanguage, FaDownload } from "react-icons/fa";
+import {
+  FaUser,
+  FaBriefcase,
+  FaTools,
+  FaGraduationCap,
+  FaCertificate,
+  FaLanguage,
+  FaDownload,
+} from "react-icons/fa";
 
 function Resume() {
   const resumeRef = useRef();
@@ -36,68 +44,88 @@ function Resume() {
 
   return (
     <section className="resume-wrapper fade-in">
-      {/* Download Button */}
       <button className="download-btn" onClick={downloadPDF}>
         <FaDownload /> Download PDF
       </button>
 
       <div className="resume-container" ref={resumeRef}>
-
         {/* LEFT COLUMN */}
         <div className="resume-left slide-up">
-
           {/* Profile */}
-          <h2 className="resume-sec-title"><FaUser /> Profile</h2>
+          <h2 className="resume-sec-title">
+            <FaUser /> Profile
+          </h2>
           <p className="resume-text">
-            Recent BCA graduate specializing in building responsive, user-friendly
-            web interfaces with modern frontend technologies. Passionate about
-            problem-solving and creating seamless user experiences.
+            Recent BCA graduate and MERN Stack Developer with strong skills in
+            HTML, CSS, JavaScript, React, Node.js, and Express. Experienced in
+            building responsive web applications, RESTful APIs, and integrating
+            frontend with backend services. Passionate about creating
+            user-friendly, high-performance applications and growing as a
+            full-stack developer.
           </p>
 
-          {/* Skills */}
-          <h2 className="resume-sec-title"><FaTools /> Technical Skills</h2>
+          {/* Technical Skills */}
+          <h2 className="resume-sec-title">
+            <FaTools /> Technical Skills
+          </h2>
           <ul className="resume-list">
-            <li>JavaScript, HTML, CSS</li>
-            <li>Bootstrap, SCSS, SASS</li>
+            <li>HTML, CSS, JavaScript (ES6+)</li>
+            <li>React.js, Bootstrap, SCSS/SASS</li>
+            <li>Node.js, Express.js, REST APIs</li>
+            <li>MongoDB, CRUD Operations</li>
             <li>Git, GitHub, VS Code</li>
-            <li>Responsive Web Design, DOM Manipulation</li>
+            <li>Responsive Design, DOM Debugging</li>
           </ul>
 
-          <h2 className="resume-sec-title"><FaTools /> Soft Skills</h2>
+          {/* Soft Skills */}
+          <h2 className="resume-sec-title">
+            <FaTools /> Soft Skills
+          </h2>
           <ul className="resume-list">
             <li>Communication</li>
             <li>Problem Solving</li>
             <li>Time Management</li>
+            <li>Team Collaboration & Leadership</li>
           </ul>
 
           {/* Languages */}
-          <h2 className="resume-sec-title"><FaLanguage /> Languages</h2>
+          <h2 className="resume-sec-title">
+            <FaLanguage /> Languages
+          </h2>
           <ul className="resume-list">
             <li>Malayalam</li>
             <li>English</li>
             <li>Hindi</li>
           </ul>
-
         </div>
 
         {/* RIGHT COLUMN */}
         <div className="resume-right slide-up">
-        
           {/* Header */}
           <div className="resume-header">
             <h1>ABDUL ASHFAQE</h1>
-            <p className="resume-role">MERN STACK Developer</p>
+            <p className="resume-role">MERN Stack Developer</p>
 
             <div className="resume-contact">
-              <p><strong>Email:</strong> abdulashfaqehere@gmail.com</p>
-              <p><strong>Phone:</strong> 7306614239</p>
-              <p><strong>Location:</strong> Kasaragod, Kerala</p>
-              <p><strong>LinkedIn:</strong> www.linkedin.com/in/asxxfaq</p>
+              <p>
+                <strong>Email:</strong> abdulashfaqehere@gmail.com
+              </p>
+              <p>
+                <strong>Phone:</strong> +91 7306614239
+              </p>
+              <p>
+                <strong>Location:</strong> Kasaragod, Kerala
+              </p>
+              <p>
+                <strong>LinkedIn:</strong> www.linkedin.com/in/asxxfaq
+              </p>
             </div>
           </div>
 
-          {/* Experience Timeline */}
-          <h2 className="resume-sec-title"><FaBriefcase /> Professional Experience</h2>
+          {/* Experience */}
+          <h2 className="resume-sec-title">
+            <FaBriefcase /> Professional Experience
+          </h2>
 
           <div className="timeline">
             <div className="timeline-item">
@@ -106,38 +134,71 @@ function Resume() {
                 <h3>MERN Full Stack Intern — Techolas Technologies</h3>
                 <span>July 2025 – Present | Calicut</span>
                 <ul>
-                  <li>Developed responsive websites using HTML, CSS, JS, Bootstrap.</li>
-                  <li>Implemented interactive UI components.</li>
-                  <li>Built mobile-first layouts.</li>
-                  <li>Debugged & optimized frontend code.</li>
-                  <li>Used Git/GitHub for version control.</li>
+                  <li>
+                    Built responsive web interfaces using HTML, CSS, JavaScript,
+                    Bootstrap, and React.
+                  </li>
+                  <li>Developed reusable React components.</li>
+                  <li>Created RESTful APIs using Node.js and Express.</li>
+                  <li>
+                    Integrated frontend with backend and handled JSON data.
+                  </li>
+                  <li>
+                    Collaborated using Git/GitHub to debug and optimize
+                    applications.
+                  </li>
                 </ul>
               </div>
             </div>
           </div>
 
+          {/* Projects */}
+          <h2 className="resume-sec-title">
+            <FaBriefcase /> Projects
+          </h2>
+
+          <ul className="resume-list">
+            <li>
+              <strong>Elaria Jewels (E-Commerce Website)</strong> — HTML, CSS,
+              JavaScript  
+              <br />
+              Designed and developed a fully responsive jewellery e-commerce
+              website with clean UI, interactive features, and cross-device
+              compatibility.
+            </li>
+            <li>
+              <strong>Vyaparify – Business Web Application</strong> — React.js,
+              JavaScript  
+              <br />
+              Developed a scalable business web application using React with a
+              component-based architecture to ensure maintainability and smooth
+              user experience.
+            </li>
+          </ul>
+
           {/* Education */}
-          <h2 className="resume-sec-title"><FaGraduationCap /> Education</h2>
+          <h2 className="resume-sec-title">
+            <FaGraduationCap /> Education
+          </h2>
 
           <div className="timeline">
             <div className="timeline-item">
               <div className="circle"></div>
               <div className="timeline-content">
-                <h3>BCA — Srinivas University</h3>
-                <span>2022 – 2025 | Mangalore</span>
-                <p>Specialization: AI, VR & Robotics</p>
+                <h3>Bachelor of Computer Application</h3>
+                <span>2022 – 2025 | Srinivas University, Mangalore</span>
               </div>
             </div>
           </div>
 
           {/* Certificates */}
-          <h2 className="resume-sec-title"><FaCertificate /> Certificates</h2>
+          <h2 className="resume-sec-title">
+            <FaCertificate /> Certificates
+          </h2>
           <ul className="resume-list">
-            <li>AI Intern — GENZ Educate Wing Bangalore</li>
+            <li>AI Intern — GENZ Educate Wing, Bangalore</li>
           </ul>
-
         </div>
-
       </div>
     </section>
   );
